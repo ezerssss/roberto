@@ -7,7 +7,11 @@
 
 ## Install
 
-[**Chrome** extension]() <!-- TODO: Add chrome extension link inside parenthesis -->
+1. Clone this repository
+2. Open chrome://extensions
+3. Check the Developer mode checkbox
+4. Click on the Load unpacked extension button
+5. Select the folder where you cloned this repository
 
 ## Contribution
 
