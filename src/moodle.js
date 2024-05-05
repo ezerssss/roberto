@@ -7,6 +7,8 @@ chrome.alarms.onAlarm.addListener(async (alarm) => {
     return;
   }
 
+  const courses = [];
+
   const assignmentReq = await fetch(
     'https://upvisayas.net/lms3/webservice/rest/server.php?moodlewsrestformat=json',
     {
@@ -25,13 +27,19 @@ chrome.alarms.onAlarm.addListener(async (alarm) => {
   const assRes = await assignmentReq.json();
 
   for (const course of assRes.courses) {
+    courses.push({ id: course.id, name: course.fullname });
+
     for (const assignment of course.assignments) {
       if (assignment.duedate) {
         const due = new Date(0);
         due.setUTCSeconds(assignment.duedate);
 
         if (currentDate < due) {
-          workDue.push({ name: assignment.name, due });
+          workDue.push({
+            name: assignment.name,
+            due: due.toDateString(),
+            course: course.fullname,
+          });
         }
       }
     }
@@ -57,7 +65,13 @@ chrome.alarms.onAlarm.addListener(async (alarm) => {
       due.setUTCSeconds(forum.duedate || forum.cutoffdate);
 
       if (currentDate < due) {
-        workDue.push({ name: forum.name, due });
+        const course = courses.find((c) => c.id == forum.course);
+
+        workDue.push({
+          name: forum.name,
+          due: due.toDateString(),
+          course: course.name,
+        });
       }
     }
   }

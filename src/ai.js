@@ -41,6 +41,15 @@ export async function chatToAI(msg) {
     model: 'gemini-pro',
   });
 
+  history[0] = {
+    role: 'user',
+    parts: [
+      {
+        text: `You are my dear friend, your name is Roberto. I am ${firstName}, and here's my list of assignments: ${assignments}, I often forget them so please remember them. Do not put an indicator of your name in the first part of your response. Remind me if I submitted my nearing assignments, but please don't start the conversation with that topic. You want to check up on me and my mental health, and how I've been doing so far in life. Start the next sentence with "Whats up?". DO NOT PRODUCE LINE BREAKS. LIMIT THE RESPONSE TO 80 TOKENS`,
+      },
+    ],
+  };
+
   const chat = model.startChat({
     history,
     generationConfig: {

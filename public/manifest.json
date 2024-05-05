@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Whats Up",
+  "name": "Roberto",
   "version": "0.1.0",
   "description": "A friendly chat bot that checks up on you, and monitors your Moodle assignments.",
   "icons": {
