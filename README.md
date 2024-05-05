@@ -1,11 +1,11 @@
-# <img src="public/icons/icon_48.png" width="45" align="left"> Whats Up
+# ![icon_128](https://github.com/ezerssss/roberto/assets/72904036/65ab6bea-8974-4f36-bac3-945cd457b0c3) Whats Up
 
-My Chrome Extension
+Roberto
 
 ## Features
 
-- Feature 1
-- Feature 2
+- Friend chat bot that checks up on you
+- Integrates with UPV Moodle for Roberto to know your assignments and due work
 
 ## Install
 
