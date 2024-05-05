@@ -12,16 +12,103 @@
 
       <hr class="divider" />
 
-      <p class="title">Chrome Extension is Ready!</p>
-      <p class="subtitle">Start by updating <code>index.html</code></p>
+      <div id="moodle-register" style="display: none">
+        <form id="moodle-form">
+          <p class="title center">Lets get you set up</p>
+          <div style="margin: 30px 0px 10px 0px">
+            <label for="username">Moodle Username</label>
+            <input
+              type="text"
+              placeholder="Enter username"
+              id="username"
+              name="username"
+              required
+            />
+          </div>
+          <div style="margin: 10px 0px">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              placeholder="Enter password"
+              id="password"
+              name="password"
+              required
+            />
+          </div>
+          <div style="margin: 10px 0px">
+            <a href="https://aistudio.google.com/app/apikey" target="_blank">
+              Gemini API Key
+            </a>
+            <input
+              type="password"
+              placeholder="Enter API key"
+              id="apiKey"
+              name="apiKey"
+              required
+            />
+          </div>
+          <div
+            style="display: flex; justify-content: center; align-items: center"
+          >
+            <input
+              type="submit"
+              name="submit"
+              id="form-submit"
+              style="
+                width: fit-content;
+                background-color: green;
+                color: white;
+                padding: 10px 30px;
+                cursor: pointer;
+              "
+            />
+            <span
+              class="loader"
+              style="display: none"
+              id="moodle-spinner"
+            ></span>
+          </div>
+          <p
+            style="
+              color: red;
+              display: none;
+              text-align: center;
+              font-weight: bold;
+            "
+            id="error"
+          ></p>
+        </form>
+      </div>
+      <div id="main" style="display: none; width: 600px; text-align: center">
+        <div
+          style="
+            font-size: 14px;
+            height: 70px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+          "
+        >
+          <p id="response"></p>
+        </div>
+        <input
+          type="text"
+          style="
+            background-color: transparent;
+            outline: 0;
+            border-width: 0 0 1px;
+            padding: 5px;
+            border-color: white;
+            color: white;
+            margin: 20px 0;
+            width: 65%;
+          "
+          placeholder="Respond to Roberto"
+          id="respond"
+          class="hidden"
+        />
+      </div>
     </div>
     <script src="app.js"></script>
-
-    <!--
-      This HTML file is a template for overriding pages like New Tab, Bookmarks, or History page.
-
-      To begin the development, run `npm run watch`.
-      To create a production bundle, use `npm run build`.
-    -->
   </body>
 </html>

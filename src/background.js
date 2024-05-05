@@ -1,18 +1,14 @@
 'use strict';
 
-// With background scripts you can communicate extension files.
-// For more information on background script,
-// See https://developer.chrome.com/extensions/background_pages
-
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  if (request.type === 'GREETINGS') {
-    const message = `Hi Ove, my name is Bac. I am from Background. It's great to hear from you.`;
-
-    // Log message coming from the `request` parameter
-    console.log(request.payload.message);
-    // Send a response message
-    sendResponse({
-      message,
-    });
+chrome.runtime.onInstalled.addListener(async ({ reason }) => {
+  if (reason !== 'install') {
+    return;
   }
+
+  // Create an alarm so we have something to look at in the demo
+  await chrome.alarms.create('demo-default-alarm', {
+    delayInMinutes: 0,
+    // periodInMinutes: 1440,
+    periodInMinutes: 1,
+  });
 });

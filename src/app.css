@@ -16,6 +16,11 @@ body {
   color: #fff;
 }
 
+a {
+  text-decoration: underline;
+  color: #fff;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -60,4 +65,85 @@ code {
   width: 50px;
   border: 0.5px dashed #fff;
   opacity: 0.2;
+}
+
+form input,
+button {
+  margin: 5px 0;
+  outline: none;
+  border-radius: 20px;
+  border: 0;
+  width: 100%;
+  padding: 10px;
+  font-size: 13px;
+}
+
+.center {
+  text-align: center;
+}
+
+#main ::placeholder {
+  color: white;
+}
+
+/* Spinner */
+
+.loader {
+  margin: 10px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animations */
+
+.show-input {
+  animation: goUpShow 1s ease-in-out;
+}
+
+@keyframes goUpShow {
+  0% {
+    translate: 0 10px;
+    opacity: 0;
+  }
+  100% {
+    translate: 0 0px;
+    opacity: 1;
+  }
+}
+
+.remove-input {
+  animation: hideOpacity 1s ease-out;
+}
+
+@keyframes hideOpacity {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+}
+
+.hidden {
+  opacity: 0;
+}
+
+#response {
+  white-space: pre-wrap;
 }
