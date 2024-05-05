@@ -1,6 +1,4 @@
-# ![icon_128](https://github.com/ezerssss/roberto/assets/72904036/65ab6bea-8974-4f36-bac3-945cd457b0c3) Whats Up
-
-Roberto
+# ![icon_128](https://github.com/ezerssss/roberto/assets/72904036/65ab6bea-8974-4f36-bac3-945cd457b0c3) Roberto
 
 ## Features
 
